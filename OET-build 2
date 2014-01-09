@@ -1,0 +1,257 @@
+# -*- coding: cp1250 -*-
+import math
+import os
+print "OET-Helper 1.0 Alpha"
+print "Created by Robert Marko & Robert Soric"
+print""
+print""
+print "Odaberi:"
+print "0-Paralelni otpornici"
+print "1-Serijski otpornici"
+print "2-Induktivna reaktancija Xl"
+print "3-Kapacitivna reaktancija Xc"
+print "4-Izracunavanje struje I:"
+print "5-Izracunavanje pada napona:"
+print "6-Algebarski u polarni oblik"
+print "7-Polarni u algebarski oblik"
+print "8-Prividna snaga S"
+print "9-Radna snaga P"
+print "10-Jalova snaga Q"
+print "11-Kalkulator"
+z = input ()
+if z==0:
+    a = input ("Unesite modul otpora 1:")
+    b = input ("Unesite modul otpora 2:")
+    c = input ("Unesite realni dio otpora 1:")
+    d = input ("Unesite imaginarni dio otpora 1:")
+    e = input ("Unesite realni dio otpora 2:")
+    f = input ("Unesite imaginarni dio otpora 2:")
+    a1 = input ("Unesite kut otpora 1:")
+    b1 = input ("Unesite kut otpora 2:")
+    g = a*b
+    h = c+e
+    i = d+f
+    j = h*h
+    k = i*i
+    l = j+k
+    m = math.sqrt(l)
+    n = g/m
+    g1 = a1+b1
+    h1 = i/float(h)
+    i1 = math.atan(h1)
+    j1 = math.degrees(i1)
+    k1 = g1-j1
+    print "Iznos otpora je:"
+    print n
+    print "Kut otpora je:"
+    print k1,"stupnjeva"
+    os.system("pause")
+
+elif z==1:
+    if z==1:
+        a = input ("Unesite realni dio otpora 1:")
+        b = input ("Unesite imaginarni dio otpora 1:")
+        c = input ("Unesite realni dio otpora 2:")
+        d = input ("Unesite imaginarni dio otpora 2:")
+        e = a+c
+        f = b+d
+        g = f/float(e)
+        h = math.atan(g)
+        i = math.degrees(h)
+        j = e*e
+        k = f*f
+        l = j+k
+        m = math.sqrt(l)
+        print "Iznos otpora je:"
+        print m
+        print "Kut otpora je:"
+        print i,"stupnjeva"
+        os.system("pause")
+
+elif z==2:
+    if z==2:
+        a = input ("Unesite iznos induktiviteta L:")
+        b = input ("Unesite iznos frekvencije F:")
+        c = math.pi*2
+        d = c*b
+        e = d*a
+        print "Iznos induktivne reaktancije Xl je:"
+        print e
+        os.system("pause")
+
+elif z==3:
+    if z==3:
+        a = input ("Unesite iznos kapaciteta C:")
+        b = input ("Unesite iznos frekvencije F:")
+        c = math.pi*2
+        d = c*b
+        e = d*a
+        f = 1/e
+        print "Iznos kapacitivne reaktancije Xc je:"
+        print f
+        os.system("pause")
+
+elif z==4:
+    if z==4:
+        a = input ("Unesite iznos napona U:")
+        b = input ("Unesite kut napona U:")
+        c = input ("Unesite iznos impendancije Z:")
+        d = input ("Unesite kut impendancije Z:")
+        e = a/float(c)
+        f = b-d
+        print "Iznos struje I je:"
+        print e,"A"
+        print "Kut iznosi:"
+        print f,"stupnjeva"
+        os.system("pause")
+
+elif z==5:
+    if z==5:
+        a = input ("Unesite iznos struje I:")
+        a1 = input ("Unesite kut struje I:")
+        b = input ("Unesite iznos impendancije Z:")
+        b1 = input ("Unesite kut impendancije Z:")
+        c = a*b
+        d = a1+b1
+        print "Pad napona je:"
+        print c,"V"
+        print "Kut iznosi:"
+        print d,"stupnjeva"
+        os.system("pause")
+
+elif z==6:
+    if z==6:
+        a = input ("Unesi realni dio velicine:  ")
+        b = input ("Unesi imaginarni dio velicine:  ")
+        c = a*a
+        d = b*b
+        e = c+d
+        f = math.sqrt(e)
+        n = b/float(a)
+        h = math.atan(n)
+        i = math.degrees(h)
+        print "Vasa velicina u polarnom obliku je:  "
+        print f
+        print "Kut je:   "
+        print i,"stupnjeva"
+        os.system("pause")
+
+elif z==7:
+    if z==7:
+        a = input ("Unesi iznos velicine:  ")
+        b = input ("Unesi kut velicine:  ")
+        i = math.radians(b)
+        j = math.cos(i)
+        k = math.sin(i)
+        c = a*j
+        d = a*k
+        if d<0:
+            x = "-"
+        else: x = "+"
+        u = abs(d)
+        print "Vaa velicina u algebarskom obliku je:  "
+        print c,x,"j",u
+        os.system("pause")
+
+elif z==8:
+    if z==8:
+        a = input ("Unesite iznos napona U:")
+        b = input ("Unesite kut napona U:")
+        c = input ("Unesite iznos struje I:")
+        d = input ("Unesite kut struje I:")
+        e = a*c
+        f = b+(-d)
+        print "Iznos prividne snage S je:"
+        print e,"VA"
+        print "Kut je:"
+        print f,"stupnjeva"
+        os.system("pause")
+        
+elif z==9:
+    if z==9:
+        a = input ("Unesite iznos prividne snage S:")
+        b = input ("Unesite kut prividne snage S:")
+        c = float(b)
+        f = math.radians(c)
+        d = math.cos(f)
+        e = a*d
+        print ("Iznos djelatne snage P je:")
+        print e,"W"
+        os.system("pause")
+
+elif z==10:
+    if z==10:
+        a = input ("Unesite iznos prividne snage S:")
+        b = input ("Unesite kut prividne snage S:")
+        c = float(b)
+        f = math.radians(c)
+        d = math.sin(f)
+        e = a*d
+        print "Iznos jalove snage Q je:"
+        print e,"var"
+        os.system("pause")
+
+elif z==11:
+    if z==11:
+        print "1-Zbrajanje"
+        print "2-Oduzimanje"
+        print "3-Mnozenje"
+        print "4-Dijeljenje"
+        print "5-Kvadriranje"
+        print "6-Korjenovanje"
+        k = input ()
+        if k==1:
+            a = input ("Unesite prvi broj:")
+            b = input ("Unesite drugi broj:")
+            c = a+b
+            print "Rezultat je:"
+            print c
+            os.system("pause")
+
+        elif k==2:
+            if k==2:
+                a = input ("Unesite prvi broj:")
+                b = input ("Unesite drugi broj:")
+                c = a-b
+                print "Rezultat je:"
+                print c
+                os.system("pause")
+
+        elif k==3:
+            if k==3:
+                a = input ("Unesite prvi broj:")
+                b = input ("Unesite drugi broj:")
+                c = a*b
+                print "Rezultat je:"
+                print c
+                system("pause")
+
+        elif k==4:
+            if k==4:
+                a = input ("Unesite prvi broj:")
+                b = input ("Unesite drugi broj:")
+                c = a/b
+                print "Rezultat je:"
+                print c
+                os.system("pause")
+
+        elif k==5:
+            if k==5:
+                a = input ("Unesite broj:")
+                b = a*a
+                print "Rezultat je:"
+                print b
+                os.system("pause")
+        elif k==6:
+            if k==6:
+                a = input ("Unesite broj:")
+                b = math.sqrt(a)
+                print "Rezultat je:"
+                print b
+                os.system("pause")
+
+else:
+    print "Molimo odaberi radnju unosenjem broja"
+        
+        
+
